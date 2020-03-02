@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+			<h1>Prueba de Listar las Cocinas</h1>
+<table class="">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Descripcion</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="cuisine :${cuisinePage.content}">
+							 	<td th:text="${cuisine.id}">Id</td>
+								<td th:text="${cuisine.description}">Descripcion</td>
+								<td th:text="${cuisine.type}">tipo</td>
+								
+						<td>	
+					</td>
+<!-- 								<td th:each="libros :${clientes.libro}"> -->
+<!-- 									  <a th:text="${libros.nombre}">Nombre</a></br> -->
+<!-- 								</td> -->
+					<!--			<td><a th:href="@{/delete/(id=${clientes.id})}"
+									class="btn btn-danger delBtn">Borrar</a></td>
+								<td><a th:href="@{/findOne/(id=${clientes.id})}"
+									class="btn btn-primary eBtn">Editar</a></td></tr>-->
+									</tr>
+						</tbody>
+					</table>
+					<br><br><br>
+				
+					<br><br><br>
+					<h2>Guardar Cuisine</h2>
+					<form th:action="@{/saveCuisine}" th:method="post">
+					<table>
+					<!--	<tr>
+						   <td>Id:</td>
+					<td><input type="text" id="id" name="id" value=""></td>
+						
+						</tr>
+						 -->	
+						<tr>
+							<td>Tipo:</td>
+							<td><input type="text" id="tipo" name="type" value=""></td>
+						</tr>
+						<tr>
+							<td>Descripcion</td>
+							<td><input type="text" id="descripcion" name="description"></td>
+						</tr>
+						
+						
+					</table>
+						<input type="submit" value="guardar Cuisine!!">
+					</form>
+					
+					
+					<br><br><br>
+					<br><br><br>
+					<h2>Actualizar Cuisine</h2>
+					<form th:action="@{/saveCuisine}" th:method="post">
+					<table>
+					<tr>
+						   <td>Id:</td>
+					<td>
+				<!--  	<input type="text" id="id" name="id" value="">
+				<select  name="id">
+					<option th:each="chef :${chefPage}" th:value="${chef.id}" th:text="${chef.name}">
+					</option>
+					</select>
+				
+				
+				</td>-->
+				<select  name="id">
+					<option th:each="cuisine :${cuisinePage}" th:value="${cuisine.id}" th:text="${cuisine.type}">		
+					</option>
+					</select>
+		</td>
+						</tr>
+							
+						<tr>
+							<td>Tipo:</td>
+							<td><input type="text" id="tipo" name="type" value=""></td>
+						</tr>
+						<tr>
+							<td>Descripcion</td>
+							<td><input type="text" id="descripcion" name="description"></td>
+						</tr>
+						
+						
+					</table>
+						<input type="submit" value="guardar Cuisine!!">
+					</form>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+h2
+{
+    text-align: center;
+    margin-right: 10%;
+}
+
+.logo
+{
+    margin: 2%;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    float: left;
+}

@@ -1,0 +1,53 @@
+h5
+{
+    color: black;
+}
+
+div p
+{
+    color: black;
+}
+
+.contenedor
+{
+    margin: 1%;
+}
+
+footer p
+{
+    text-align: center;
+}
+
+.secciones
+{
+    margin: 1%;
+}
+
+h3
+{
+    width: 100%; 
+    align-content: left; 
+    margin-top: 1%;
+}
+
+#carouselExampleIndicators
+{
+    height: 100%;
+    width: 100%;
+}
+
+#menu
+{
+    width: 97%;
+    text-align: center;
+}
+
+#menu ul
+{
+    list-style: none;
+}
+
+h1
+{
+    text-align: center;
+}

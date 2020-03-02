@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Prueba de Listar a los CHEFS</h1>
+<table class="">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Nacionalidad</th>
+								<th>Anio de Nacimiento</th>
+								<th>Tipo de cocina</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="chef :${chefPage.content}">
+							 	<td th:text="${chef.id}">Id</td>
+								<td th:text="${chef.name}">Nombre</td>
+								<td th:text="${chef.nationality}">Nacionalidad</td>
+								<td th:text="${chef.birthYear}" >Anio de Nacimiento</td>
+								<td th:text="${chef.cuisine}">restaurante</td>
+<!-- 								<td th:each="libros :${clientes.libro}"> -->
+<!-- 									  <a th:text="${libros.nombre}">Nombre</a></br> -->
+<!-- 								</td> -->
+					<!--			<td><a th:href="@{/delete/(id=${clientes.id})}"
+									class="btn btn-danger delBtn">Borrar</a></td>
+								<td><a th:href="@{/findOne/(id=${clientes.id})}"
+									class="btn btn-primary eBtn">Editar</a></td></tr>-->
+									</tr>
+						</tbody>
+					</table>
+					
+		<!-- 		<br><br><br>
+					<select >
+					<option th:each="chef :${chefPage.content}" th:value="${chef.id}" th:name="${chef.id}" th:text="${chef.id}">
+					</option>
+					
+					</select>
+					 -->	
+					
+					<br><br><br>
+					<h2>Guardar Chefcitos</h2>
+					<form th:action="@{/saveChef}" th:method="post">
+					<table>
+					<!--	<tr>
+						   <td>Id:</td>
+					<td><input type="text" id="id" name="id" value=""></td>
+						
+						</tr>
+						 -->	
+						<tr>
+							<td>Nombre:</td>
+							<td><input type="text" id="nombre" name="name" value=""></td>
+						</tr>
+						<tr>
+							<td>Nacionalidad</td>
+							<td><input type="text" id="nacionalidad" name="nationality"></td>
+						</tr>
+						<tr>
+							<td>Anio de Nacimiento</td>
+							<td><input type="text" id="anio" name="birthYear"></td>
+						</tr>
+						<tr>
+							<td>Tipo de cuisine</td>
+							<td><input type="text" id="cuisine" name="cuisine"></td>
+						</tr>
+						
+					</table>
+						<input type="submit" value="guardar CHEF!!">
+					</form>
+					
+					
+					
+					
+					
+					<h2>Actualizar Chefcitos</h2>
+					<form th:action="@{/actualizarChef}" th:method="post">
+					<table>
+						<tr>
+						 <!--  <td>Id:</td>
+							<td><input type="text" id="id" name="id" value=""></td>
+							
+						--><td>Selecciona el Id:</td>
+						<td><select  name="id">
+					<option th:each="chef :${chefPage}" th:value="${chef.id}" th:text="${chef.name}">
+					</option>
+					</select>
+						</td>
+						
+						</tr>
+							
+						<tr>
+							<td>Nombre:</td>
+							<td><input type="text" id="nombre" name="name" value=""></td>
+						</tr>
+						<tr>
+							<td>Nacionalidad</td>
+							<td><input type="text" id="nacionalidad" name="nationality"></td>
+						</tr>
+						<tr>
+							<td>Anio de Nacimiento</td>
+							<td><input type="text" id="anio" name="birthYear"></td>
+						</tr>
+						<tr>
+							<td>Tipo de cuisine</td>
+							<td><input type="text" id="cuisine" name="cuisine"></td>
+						</tr>
+					</table>
+						<input type="submit" value="Actualizar el Chef">
+					</form>
+					<br><br><br>
+					<br><br><br>
+					
+					<h2>Prueba de Borrar Chef</h2>
+					<form th:action="@{/deleteChef}">
+					<table>
+						<tr>
+						<td>Coloca el Id que quieres borrar:</td>
+						<td><select  name="id">
+					<option th:each="chef :${chefPage}" th:value="${chef.id}" th:text="${chef.id}">
+					</option>
+					</select></td>
+						</tr>
+					</table>
+					<input type="submit" value="Borrar Chef">
+					</form>
+					
+					
+					
+					
+					
+					
+
+
+</body>
+</html>

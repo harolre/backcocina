@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>Receta</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS/receta.css">
+    </head>
+    <body>
+        <header>
+           <h1 class="text-primary">Recetas</h1>
+        </header>
+        <nav id="menu">
+                <ul>
+                    <li class="btn-info">MENÚ</li>
+                    <li class="btn-info"><a th:href="@{/}" class="text-white">Inicio</a></li>
+                    <li class="btn-info"><a th:href="@{/cocinero}" class="text-white">Cocinero</a></li>
+                    <li class="btn-info"><a th:href="@{/recipe}" class="text-white">Receta</a></li>
+                    <li class="btn-info"><a th:href="@{/cuisine}" class="text-white">Tipos de cocina</a></li>
+                </ul>    
+        </nav>
+        <div id="contenedor">
+        <h2>¿Qué desea hacer?</h2>
+        <form name="formulario">
+            <input type="radio" name="receta" value="crearReceta" class="radio1" onclick="elegirOpcion()"> Crear receta<br>
+            <input type="radio" name="receta" value="modificarReceta" class="radio2" onclick="elegirOpcion()"> Modificar receta<br>
+            <input type="radio" name="receta" value="eliminarReceta" class="radio3" onclick="elegirOpcion()"> Eliminar receta<br>
+        </form>
+        <div id="todosCocineros">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ingredientes</th>
+                    <th scope="col">Preparación</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Nombre del Chef</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="recipe :${recipePage.content}">
+							 	<td th:text="${recipe.id}">Id</td>
+								<td th:text="${recipe.name}">Nombre</td>
+								<td th:text="${recipe.ingredients}">Ingredientes</td>
+								<td th:text="${recipe.preparation}" >Preparacion</td>
+								<td th:text="${recipe.description}">descripcion</td>
+								<td th:text="${recipe.chef}">Idchef</td>
+<!-- 								<td th:each="libros :${clientes.libro}"> -->
+<!-- 									  <a th:text="${libros.nombre}">Nombre</a></br> -->
+<!-- 								</td> -->
+					<!--			<td><a th:href="@{/delete/(id=${clientes.id})}"
+									class="btn btn-danger delBtn">Borrar</a></td>
+								<td><a th:href="@{/findOne/(id=${clientes.id})}"
+									class="btn btn-primary eBtn">Editar</a></td></tr>-->
+									</tr>
+                </tbody>
+              </table>
+        </div>
+        <div id="crearReceta">
+            <form th:action="@{/saveRecipe}" th:method="post" name="uno" >
+                <ul>
+                    <li>
+                        <label for="name">Nombre:</label>
+                      <input type="text" id="nombre" name="name" value="" class="caja">
+                    </li>
+                    <li>
+                        <label for="name">Ingredientes:</label>
+                        <input type="text" id="ingredientes" name="ingredients" class="caja">
+                    </li>
+                    <li>
+                        <label for="name">Preparación:</label>
+                       <input type="text" id="prepa" name="preparation" class="caja">
+                    </li>
+                <li>
+                <label for="name">Descripción:</label>
+                <input type="text" id="descri" name="description" class="caja">
+                </li>
+                 <li>
+                <label for="name">Chef que lo preparo:</label>
+                <input type="text" id="chef" name="chef" class="caja">
+                </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input type="submit" value="Crear receta" class="btn-success">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div id="modificarReceta">
+            <form th:action="@{/saveRecipe}" th:method="post">
+               <ul>
+                    <li>
+                        <label for="name">ID:</label>
+                       <select  name="id">
+							<option th:each="recipe :${recipePage}" th:value="${recipe.id}" th:text="${recipe.id}">
+							</option>
+							
+					</select>
+                    </li>
+                
+                    <li>
+                        <label for="name">Nombre:</label>
+                      <input type="text" id="nombre" name="name" value="" class="caja">
+                    </li>
+                    <li>
+                        <label for="name">Ingredientes:</label>
+                      <input type="text" id="ingredientes" name="ingredients" class="caja">
+                    </li>
+                    <li>
+                        <label for="name">Preparación:</label>
+                       <input type="text" id="prepa" name="preparation" class="caja">
+                    </li>
+                <li>
+                <label for="name">Descripción:</label>
+                 <input type="text" id="descri" name="description" class="caja">
+                </li>
+                 <label for="name">Chef que lo preparo:</label>
+                  <input type="text" id="chef" name="chef" class="caja">
+                </li>
+                
+                </ul>
+                <ul>
+                    <li>
+                        <input type="submit" value="Modificar receta" class="btn-info">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div id="eliminarReceta">
+            <form th:action="@{/deleteRecipe}" >
+                <ul>
+                    <li>
+                        <label for="name">ID:</label>
+                        <select  name="id">
+							<option th:each="recipe :${recipePage}" th:value="${recipe.id}" th:text="${recipe.id}">
+							</option>
+							
+					</select>
+                    </li>
+                  
+                <ul>
+                    <li>
+                        <input type="submit" value="Eliminar receta" class="btn-danger">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        </div>
+       <footer class="bg-primary">
+            <p class="text-white"> El recetario de cocina </p>
+        </footer>
+            <script src="js/bootstrap.bundle.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/receta.js"></script>
+    </body>
+</html>

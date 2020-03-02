@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>LLEGO LA HORA DE LISTAR LAS RECETAS HEAVYS</h1>
+	<table class="">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Ingredientes</th>
+								<th>Preparacion</th>
+								<th>Descripcion</th>
+								<th>EL ID DEL CHEF</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="recipe :${recipePage.content}">
+							 	<td th:text="${recipe.id}">Id</td>
+								<td th:text="${recipe.name}">Nombre</td>
+								<td th:text="${recipe.ingredients}">Ingredientes</td>
+								<td th:text="${recipe.preparation}" >Preparacion</td>
+								<td th:text="${recipe.description}">descripcion</td>
+								<td th:text="${recipe.chef}">Idchef</td>
+<!-- 								<td th:each="libros :${clientes.libro}"> -->
+<!-- 									  <a th:text="${libros.nombre}">Nombre</a></br> -->
+<!-- 								</td> -->
+					<!--			<td><a th:href="@{/delete/(id=${clientes.id})}"
+									class="btn btn-danger delBtn">Borrar</a></td>
+								<td><a th:href="@{/findOne/(id=${clientes.id})}"
+									class="btn btn-primary eBtn">Editar</a></td></tr>-->
+									</tr>
+						</tbody>
+					</table>
+					
+					<br><br><br>
+					<br><br><br>
+					<h2>Guardar Recetas</h2>
+					<form th:action="@{/saveRecipe}" th:method="post">
+					<table>
+					<!--	<tr>
+						   <td>Id:</td>
+					<td><input type="text" id="id" name="id" value=""></td>
+					
+							<select  name="id">
+							<option th:each="chef :${chefPage}" th:value="${chef.id}" th:text="${chef.name}">
+							</option>
+							
+					</select>
+						</tr>
+						 -->	
+						<tr>
+							<td>Nombre:</td>
+							<td><input type="text" id="nombre" name="name" value=""></td>
+						</tr>
+						<tr>
+							<td>Ingredientes</td>
+							<td><input type="text" id="ingredientes" name="ingredients"></td>
+						</tr>
+						<tr>
+							<td>Preparacion</td>
+							<td><input type="text" id="prepa" name="preparation"></td>
+						</tr>
+						<tr>
+							<td>Descripcion</td>
+							<td><input type="text" id="descri" name="description"></td>
+						</tr>
+						<tr>
+							<td>Chef que lo preparo</td>
+							<td><input type="text" id="chef" name="chef"></td>
+						</tr>
+						
+					</table>
+						<input type="submit" value="guardar Receta!!">
+					</form>
+					
+					<br><br><br>
+					<br><br><br>
+					
+					
+					<h2>Actualizar Recetas</h2>
+					<form th:action="@{/saveRecipe}" th:method="post">
+					<table>
+						<tr>
+						   <td>Id:</td>
+					<td>
+			<!--  		 <input type="text" id="id" name="id" value="">--> 
+					<select  name="id">
+							<option th:each="recipe :${recipePage}" th:value="${recipe.id}" th:text="${recipe.id}">
+							</option>
+							
+					</select>
+					
+					
+					
+					
+					</td>
+						
+						</tr>
+						 
+						<tr>
+							<td>Nombre:</td>
+							<td><input type="text" id="nombre" name="name" value=""></td>
+						</tr>
+						<tr>
+							<td>Ingredientes</td>
+							<td><input type="text" id="ingredientes" name="ingredients"></td>
+						</tr>
+						<tr>
+							<td>Preparacion</td>
+							<td><input type="text" id="prepa" name="preparation"></td>
+						</tr>
+						<tr>
+							<td>Descripcion</td>
+							<td><input type="text" id="descri" name="description"></td>
+						</tr>
+						<tr>
+							<td>Chef que lo preparo</td>
+							<td>
+							  <input type="text" id="chef" name="chef">
+							
+							
+					</select>
+							
+							</td>
+						</tr>
+						
+					</table>
+						<input type="submit" value="Actualizar Recipe!!">
+					</form>
+					
+					
+					<br><br><br>
+					<br><br><br>
+					
+					<h2>Prueba de Borrar Receta</h2>
+					<form th:action="@{/deleteRecipe}">
+					<table>
+						<tr>
+						<td>Coloca el Id de la receta que quieres borrar:</td>
+						<td>
+						 <input type="text" id="id" name="id">
+						
+						</td>
+						</tr>
+					</table>
+					<input type="submit" value="Borrar Receta">
+					</form>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+	
+</body>
+</html>

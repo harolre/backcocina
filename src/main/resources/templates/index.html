@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <title>El recetario de cocina</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap-4.2.1.css">
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    </head>
+    <body>
+        <header>
+            <h1  class="text-primary"> El recetario de cocina </h1>
+        </header>
+        <nav id="menu">
+                <ul>
+                    <li class="btn-info">MENÚ</li>
+                    <li class="btn-info"><a th:href="@{/}" class="text-white">Inicio</a></li>
+                    <li class="btn-info"><a th:href="@{/cocinero}" class="text-white">Cocinero</a></li>
+                    <li class="btn-info"><a th:href="@{/recipe}" class="text-white">Receta</a></li>
+                    <li class="btn-info"><a th:href="@{/cuisine}" class="text-white">Tipos de cocina</a></li>
+                </ul>    
+        </nav>
+        <div class="contenedor">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="#cocineros"> <img class="d-block w-100" src="img/cocinero.jpg" alt="Cocineros" id="imagen"> </a> 
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5> Cocineros </h5>
+                        <p> Los mejores cocineros</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="#recetas"> <img class="d-block w-100" src="img/recetas.jpg" alt="Recetas" id="imagen"> </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Recetas</h5>
+                        <p>Todas nuestras recetas</p>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="#cocinas"> <img class="d-block w-100" src="img/cocinas.jpg" alt="Tipos de cocina" id="imagen"> </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Tipos de cocina</h5>
+                        <p>Tipos de cocina</p>
+                      </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <div class="mx-auto" style="width: 200px;"> 
+                <h3 class="bg-primary text-white"> índice de contenidos </h3>
+                <div class="text-black-50">
+                    <ul>
+                    <li> <a href="#introduccion"> <h4 class="text-muted"> Introducción </h4> </a> </li>
+                    <li> <a href="#cocineros"> <h4 class="text-muted"> Los cocineros </h4> </a> </li>
+                    <li> <a href="#recetas"> <h4 class="text-muted"> Las recetas </h4> </a> </li>
+                    <li> <a href="#cocinas"> <h4 class="text-muted"> Los tipos de cocina </h4> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="secciones">
+                <h3 id="introduccion" class="text-primary"> Introducción </h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non auctor ante. Vivamus egestas massa quam, volutpat bibendum massa euismod a. Duis lacinia pharetra tellus in pharetra. Nullam eleifend tempor eleifend. Ut auctor nisi tempus arcu viverra rutrum. Donec malesuada, ipsum quis iaculis varius, lacus massa condimentum leo, quis euismod tortor leo nec purus. Nunc sodales id nunc et gravida. Integer a pharetra turpis. Nam arcu lorem, interdum fringilla ultricies id, bibendum at turpis. Etiam aliquet laoreet ligula tincidunt vehicula. Sed aliquet metus sed justo tempor, sit amet vulputate metus eleifend. Phasellus condimentum lobortis arcu quis placerat. Fusce vestibulum vitae est vel faucibus. Sed blandit mauris vel dolor lacinia, suscipit elementum ligula efficitur.</p>
+            <p> Aenean vitae velit sit amet erat malesuada mollis. Donec diam dui, accumsan id tincidunt a, lacinia ac massa. Curabitur erat leo, pharetra sed lobortis id, feugiat quis arcu. Sed varius elementum erat. Fusce fermentum efficitur ligula a lobortis. Sed a risus iaculis, sodales lorem eu, mollis sapien. In sed sagittis orci. Suspendisse quis suscipit turpis, a condimentum magna. Phasellus tincidunt, arcu vel vestibulum mollis, eros nunc malesuada dui, sit amet fringilla enim arcu eu ligula. </p>
+            <h3 id="cocineros" class="text-primary"> Los cocineros </h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida risus sem, sit amet ullamcorper nisl aliquam eget. Mauris mauris mi, pharetra ut nisi at, cursus efficitur nunc. Nulla eget volutpat diam. Vestibulum sit amet tortor quis dui dignissim ornare. Maecenas in massa id lectus consectetur molestie. Morbi porta scelerisque odio, non rhoncus dui hendrerit sit amet. Vestibulum ipsum magna, eleifend et nibh nec, imperdiet tincidunt ipsum. Proin suscipit est eu nibh ultricies, ac pellentesque libero luctus. Donec dapibus velit elementum enim interdum, quis accumsan dui maximus. </p>
+            <h3 id="recetas" class="text-primary"> Las recetas </h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dui eros, semper eu leo eget, pretium molestie magna. Aenean at erat in nunc congue convallis in sit amet ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce feugiat scelerisque sem, ut aliquet dui mollis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec semper feugiat egestas. Ut ac commodo massa. In fermentum tellus ac tortor sollicitudin, ac fringilla sem blandit. Aliquam et iaculis arcu, ut pretium nibh. Donec sagittis ornare ex id varius. Integer in lobortis nisl. Donec id pretium orci, vitae aliquam ligula. </p>
+            <p> Morbi semper tincidunt nulla eu vulputate. Mauris mattis ornare ligula, quis auctor est iaculis vitae. Suspendisse nisl nunc, convallis ut nulla et, pulvinar efficitur dolor. Nam nec metus nisi. Duis ut nulla at augue porta auctor efficitur et tellus. Aenean tristique sagittis varius. Cras faucibus, mauris et dapibus efficitur, neque turpis cursus enim, sed sollicitudin lorem ex vehicula dolor. Quisque in mauris varius, commodo eros in, pulvinar tellus. Suspendisse eget ante dolor. Maecenas tincidunt dignissim odio, id sollicitudin ex ultricies ac. In egestas, urna quis tristique posuere, ligula justo tristique odio, a consequat orci leo vitae felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sagittis mattis ipsum id vestibulum. </p>
+            <p> Praesent nec suscipit mi. Aenean posuere malesuada odio eget fermentum. Fusce in magna quis est commodo tincidunt ut eu leo. Morbi quam tortor, suscipit id libero at, iaculis porttitor odio. Nulla turpis orci, maximus vel suscipit non, accumsan vitae mi. Nam eu fringilla neque. Pellentesque erat dolor, maximus ut mauris quis, cursus pellentesque ipsum. Fusce maximus tempor nisi, quis bibendum orci luctus nec. Suspendisse vulputate, nunc at maximus aliquam, nibh nisi malesuada libero, id finibus nunc tellus at turpis. Maecenas tempor felis a dignissim commodo. Aenean euismod ac magna in tincidunt. Ut tellus leo, lacinia id consequat a, interdum luctus purus. Morbi eu turpis nisi. </p>
+            <p> Quisque fermentum cursus purus, non gravida purus lobortis ut. Suspendisse arcu augue, gravida at ullamcorper sit amet, varius non elit. Maecenas a risus nulla. Etiam imperdiet ante sed euismod tristique. Suspendisse finibus posuere augue. Maecenas fringilla orci dui, nec dapibus nisl elementum eget. Nam tristique enim eget purus fringilla, non porta lorem viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent luctus orci non nibh facilisis, in auctor velit iaculis. </p>
+            <p> Morbi at cursus velit, nec ultrices felis. Phasellus sit amet vehicula massa, ut gravida ex. Maecenas mollis id diam non posuere. Proin dapibus non est et cursus. Donec quis diam non nisi pretium faucibus. Nullam tincidunt, purus vitae lacinia tempus, metus orci volutpat felis, non aliquam eros lectus eget erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean in suscipit eros, id molestie dolor. Fusce suscipit interdum orci, tristique faucibus leo molestie nec. </p>
+            <h3 id="cocinas"  class="text-primary"> Los tipos de cocina </h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur nisl eu ligula porttitor, vulputate fringilla libero ultrices. Fusce auctor neque eu imperdiet faucibus. Ut sodales finibus augue ac ultricies. Integer suscipit venenatis vulputate. Sed tempor congue odio, ut convallis lacus tristique eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium, leo vel congue pharetra, tellus sapien vehicula quam, et dictum elit lacus non leo. Pellentesque accumsan aliquam augue vel ultrices. Aliquam erat volutpat. Vestibulum scelerisque mi quis semper pretium. Donec risus nunc, elementum at diam sit amet, condimentum sodales felis. Ut luctus porta pellentesque. </p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales justo dui, sit amet aliquet lectus commodo eget. Integer eu lacinia massa. Nunc vel libero orci. Suspendisse consectetur cursus sapien, sit amet mollis turpis dignissim vel. Etiam volutpat blandit vehicula. Ut id rhoncus velit, a facilisis enim. Morbi placerat purus vitae diam ullamcorper dictum. Maecenas vulputate consectetur aliquam. Aenean laoreet leo ultrices, pulvinar mi sed, hendrerit dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque vitae nulla ut nibh pulvinar fermentum at ut enim. Cras id auctor libero. </p>
+            <p> Vivamus sed ipsum sit amet leo vulputate facilisis sit amet vulputate ante. Phasellus consequat rutrum ante, sit amet cursus felis eleifend nec. Vivamus maximus facilisis metus ut pretium. Nunc hendrerit feugiat pellentesque. Vivamus mattis nec urna sit amet iaculis. Proin pulvinar risus nec mollis semper. Etiam luctus consequat purus, id faucibus ipsum ornare rhoncus. Sed lacinia sodales magna. Sed maximus lorem lectus. Morbi quis urna quis eros egestas placerat pretium quis sapien. Sed scelerisque, lectus eu facilisis pellentesque, metus urna eleifend dui, eget sollicitudin orci eros varius sem. </p>
+            </div>
+        <footer class="bg-primary">
+            <p class="text-white"> El recetario de cocina </p>
+        </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-4.2.1.js"></script>
+    </body>
+</html>
